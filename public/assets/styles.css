@@ -1,0 +1,634 @@
+/* ==============
+   Variables
+   ============== */
+:root {
+  --green-main: #314638;        /* fondo hero / botón principal */
+  --green-dark: #233428;
+  --green-light: #3e5543;
+  --beige: #e3dec5;             /* texto grande / botón secundario */
+  --bg-body: #f5f7fb;
+  --bg-card: #ffffff;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --border-soft: #e1e4ea;
+  --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.12);
+  --radius-lg: 26px;
+}
+
+/* ==============
+   Reset básico
+   ============== */
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.container {
+  flex: 1;
+}
+.site-footer {
+  background: #020617;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ==============
+   Topbar
+   ============== */
+
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-soft);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topbar-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-main);
+  letter-spacing: 0.03em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-main);
+}
+
+/* enlaces "texto" */
+.main-nav .nav-link {
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+.main-nav .nav-link:hover {
+  background: #f3f4f6;
+}
+
+/* botones */
+.nav-btn {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn-outline {
+  border-color: var(--text-main);
+  color: var(--text-main);
+  background: #ffffff;
+}
+
+.nav-btn-outline:hover {
+  background: #f3f4f6;
+}
+
+.nav-btn-primary {
+  background: var(--green-main);
+  color: #ffffff;
+}
+
+.nav-btn-primary:hover {
+  background: var(--green-dark);
+}
+
+/* ==============
+   Layout general
+   ============== */
+
+.container {
+  max-width: 1120px;
+  margin: 1.8rem auto 2.4rem;
+  padding: 0 1.5rem;
+}
+
+/* ==============
+   Hero de la home
+   ============== */
+
+.hero {
+  background: var(--green-main);
+  border-radius: 34px;
+  padding: 3rem 3.2rem;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+  gap: 2.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2.3rem 2rem;
+  }
+}
+
+.hero-text h2 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2.3rem, 3vw + 1.2rem, 3.2rem);
+  font-weight: 800;
+}
+
+.hero-text .hero-sub {
+  font-size: clamp(1.6rem, 2.4vw + 0.8rem, 2.1rem);
+  font-weight: 700;
+  color: var(--beige);
+  margin-bottom: 1.2rem;
+}
+
+.hero-text p {
+  margin-top: 0.4rem;
+  font-size: 0.98rem;
+  color: rgba(249, 250, 251, 0.88);
+}
+
+.hero-text ul {
+  margin: 1.2rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: rgba(249, 250, 251, 0.88);
+}
+
+.hero-text li + li {
+  margin-top: 0.25rem;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--beige);
+  color: var(--green-main);
+  border-radius: 999px;
+  padding: 0.7rem 1.6rem;
+  border: none;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #f0ebd4;
+}
+
+.btn-outline-light {
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid rgba(248, 250, 252, 0.7);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-outline-light:hover {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+/* bloque "ilustración" */
+.hero-illustration {
+  background: linear-gradient(180deg, #3f5d4c, #223328);
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-illustration img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 28px;
+  object-fit: cover;
+}
+
+
+
+.hero-cloud {
+  width: 75%;
+  height: 60%;
+  background: linear-gradient(145deg, #f9fafb, #e5f3ff);
+  border-radius: 160px 160px 40px 40px;
+  position: relative;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.35);
+}
+
+.hero-plane {
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  background: #f9fafb;
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--green-main);
+}
+
+/* ==============
+   Cards / tablas
+   ============== */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* panel de stats admin */
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.card.stat {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.card.stat span {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-main);
+}
+
+/* tablas */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.table th {
+  background: #f3f4f6;
+  text-align: left;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+/* ==============
+   Formularios (login / registro / perfil / reserva)
+   ============== */
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form-card {
+  background: #ffffff;
+  padding: 2rem 2.3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  width: 100%;
+  max-width: 520px;
+}
+
+.form-card h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.form-subtitle {
+  margin-top: 0.2rem;
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  margin-top: 0.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  background: #f9fafb;
+  font-size: 0.9rem;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  outline: 2px solid #a7c4b3;
+  outline-offset: 0;
+  background: #ffffff;
+}
+
+.form-card button {
+  margin-top: 0.8rem;
+  width: 100%;
+  background: var(--green-main);
+  color: #ffffff;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.form-card button:hover {
+  background: var(--green-dark);
+}
+
+.form-extra {
+  margin-top: 0.9rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-extra a {
+  color: var(--green-main);
+  text-decoration: none;
+}
+
+.form-extra a:hover {
+  text-decoration: underline;
+}
+
+/* alertas */
+
+.alert {
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-size: 0.88rem;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ==============
+   Footer
+   ============== */
+
+.footer {
+  background: #0b1020;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 0.9rem;
+  font-size: 0.82rem;
+  margin-top: 2rem;
+}
+
+.calendar-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 1.5rem;
+}
+
+.calendar-event {
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+}
+
+/* Colores por tipo de reserva */
+.event-tipo-1 { /* Aeropuerto → Hotel */
+  background: #e3f2fd;
+  border-left: 4px solid #1565c0;
+}
+
+.event-tipo-2 { /* Hotel → Aeropuerto */
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+}
+
+.event-tipo-3 { /* Ida y vuelta */
+  background: #fff3e0;
+  border-left: 4px solid #ef6c00;
+}
+
+.calendar-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Grid de tarjetas */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-event {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+}
+
+/* Colores por tipo */
+.event-tipo-1 {
+  background-color: #E3F2FD; /* azul clarito */
+  border-color: #90CAF9;
+}
+
+.event-tipo-2 {
+  background-color: #E8F5E9; /* verde clarito */
+  border-color: #A5D6A7;
+}
+
+.event-tipo-3 {
+  background-color: #FFF3E0; /* naranja clarito */
+  border-color: #FFCC80;
+}
+
+/* === Acciones con iconos en tablas === */
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.action-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px 6px;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.action-icon.edit {
+  color: #1f7a8c;      /* azulito para editar */
+}
+
+.action-icon.delete {
+  color: #d90429;      /* rojo para borrar */
+}
+
+.action-icon:hover {
+  transform: scale(1.12);
+  opacity: 0.8;
+}
+
+/* ===== Panel usuario (similar admin) ===== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.reservas-card {
+  margin-top: 1rem;
+}
+
+.reserva-item {
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06);
+  margin-bottom: 1rem;
+}
+
+.reserva-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.reserva-date {
+  font-weight: 600;
+  color: #111827;
+  display: block;
+}
+
+.reserva-hotel {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.reserva-body p {
+  margin: 0.15rem 0;
+}
+
+/* Badges para distinguir quién creó la reserva */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.badge-own {
+  background-color: #d1fae5; /* verde suave */
+  color: #065f46;
+}
+
+.badge-admin {
+  background-color: #e5e7eb; /* gris suave */
+  color: #374151;
+}
+
+
+
