@@ -136,20 +136,20 @@ docker-compose up -d
 
 ### Admin  
 ```
-email: admin@isla.com
-pass: admin
+email: admin@islatransfers.com
+pass: admin123
 ```
 
 ### Usuario particular  
 ```
-email: user@correo.com
-pass: user
+email: pepito@prueba.com
+pass: 123
 ```
 
 ### Hotel  
 ```
-email: hotel@hotel.com
-pass: hotel
+email: hotel@demo.com
+pass: 123
 ```
 
 ---
@@ -171,7 +171,7 @@ README.md
 
 ---
 
-## 🙌 Git – Trabajo en equipo
+## 🙌 Git 
 
 Incluye:
 
@@ -183,28 +183,14 @@ Incluye:
 
 ---
 
-## 🎥 Vídeo demostrativo
-
-Debe mostrarse:
-
-✔ Login, registro y errores  
-✔ Panel admin completo  
-✔ CRUD reservas + hoteles + vehículos  
-✔ Calendario  
-✔ Panel usuario particular con regla 48h  
-✔ Perfil  
-✔ Git + AWS  
-
----
-
 ## ✔️ Proyecto listo
 
 Si sigues estos pasos, podrás ejecutar el proyecto completo sin problemas.  
-Cualquier duda, escríbeme 😊
+Cualquier duda, escríbenos 
 
 ---
 
 ## 📝 Autor
 
-Proyecto creado por el equipo Isla Transfers (FP.064)
+Proyecto creado por Laravelinas Grupo 1 (FP.064)
 
