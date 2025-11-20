@@ -15,7 +15,12 @@
 ?>
 <header class="topbar">
   <div class="topbar-inner">
-    <h1 class="logo">Isla Transfers</h1>
+    <h1 class="logo">
+      <a href="/index.php">
+        <img src="/assets/img/logo-img.png" alt="Isla Transfers" class="logo-img">
+      </a>
+    </h1>
+
 
     <nav class="main-nav">
 

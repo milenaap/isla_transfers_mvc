@@ -630,5 +630,19 @@ main.container {
   color: #374151;
 }
 
+.logo-img {
+    height: 90px;   /* puedes subir a 36–40 si lo ves muy pequeño */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.topbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+
+
 
 
